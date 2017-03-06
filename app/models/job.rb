@@ -4,5 +4,5 @@ class Job < ActiveRecord::Base
   validates :job_type, presence: true
   validates :compensation, presence: true
   validates :description, presence: true
-  validates :duration, presence: true
+  validates :skills, presence: true
 end

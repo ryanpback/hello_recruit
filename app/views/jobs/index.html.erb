@@ -1,0 +1,31 @@
+<% if @jobs.any? %>
+  <% @jobs.each do |job| %>
+    <ul class="collapsible" data-collapsible="accordion">
+      <li>
+        <div class="collapsible-header">
+          <p id="first-head"><%= job.title %></p><br>
+          <p id="second-head"><%= job.job_type %> | <%= job.location %></p>
+        </div>
+        <div class="collapsible-body">
+          <p>Compensation: <%= job.compensation %></p><br>
+          <% if job.duration != '' %>
+            <p>Duration: <%= job.duration %></p><br>
+          <% end %>
+          <p>Skills Needed: <%= job.skills %></p><br>
+          <p>Description:</p>
+          <p><%= job.description %></p>
+          <br>
+          <%= link_to 'View Job', job_path(job), :class => 'btn btn-default' %>
+        </div>
+      </li>
+    </ul>
+  <% end %>
+<% else %>
+<div class="row no-jobs">
+  <div class="col s8 offset-s2 ">
+    <div class="card">
+      <h2>There are currently no job postings</h2>
+    </div>
+  </div>
+</div>
+<% end %>

@@ -1,0 +1,19 @@
+<div class="row job-detail-row">
+  <div class="col s8 offset-s2 ">
+    <div class="card job-card">
+      <h2 class="center detail-title"><%= @job.title %></h2>
+      <br>
+      <h3 class='center detail-location'><%= @job.location %></h3>
+      <br>
+      <h4 class="center detail-job_type"><%= @job.job_type%></h4>
+      <br>
+      <h4 class="center detail-compensation"><%= @job.compensation %></h4>
+      <br>
+      <h5 class="detail-skills"><strong>Skills:</strong> <%= @job.skills %></h5>
+      <br>
+      <h5 class="detail-description-head"><strong>Description:</strong></h5>
+      <br>
+      <h5 class="detail-description"><%= @job.description %></h5>
+    </div>
+  </div>
+</div>
