@@ -17,7 +17,8 @@
       <li><%= link_to 'Jobs', jobs_path %></li>
       <% if !user_signed_in? %>
         <li><%= link_to 'Sign In', new_user_session_path %></li>
-        <li><%= link_to 'Sign Up', new_user_registration_path %></li>
+        <li><%= link_to 'Add User', new_user_registration_path %></li>
+        <li><%= link_to 'Users', users_path %></li>
       <% end %>
       <% if user_signed_in? %>
         <% if can? :new, Job %>
@@ -37,7 +38,8 @@
             <li><%= link_to 'Jobs', jobs_path %></li>
             <% if !user_signed_in? %>
               <li><%= link_to 'Sign In', new_user_session_path %></li>
-              <li><%= link_to 'Sign Up', new_user_registration_path %></li>
+              <li><%= link_to 'Add User', new_user_registration_path %></li>
+              <li><%= link_to 'Users', users_path %></li>
             <% end %>
             <% if user_signed_in? %>
               <% if can? :new, Job %>
@@ -66,6 +68,9 @@
       });
       $("#job_job_type_direct_hire").click(function() {
           $('#duration_field').slideUp();
+      });
+      $("tr[data-link]").click(function() {
+        window.location = this.dataset.link;
       });
     </script>
   </body>
