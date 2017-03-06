@@ -1,0 +1,44 @@
+<%= render "layouts/errors", :object => @job %>
+
+
+<div class="job-form row">
+  <div class="col s12">
+    <%= form_for @job do |f| %>
+    <div class="input-field col s12">
+      <%= f.label :title %>
+      <%= f.text_field :title %>
+    </div>
+
+    <div class="input-field col s12">
+      <%= f.label :location %>
+      <%= f.text_field :location %>
+    </div>
+
+    <div class="col s6 radio-buttons">
+      <%= f.radio_button :job_type, 'Contract' %>
+      <%= f.label :job_type_contract, 'Contract' %>
+      <%= f.radio_button :job_type, 'Temp To Hire' %>
+      <%= f.label :job_type_temp_to_hire, 'Temp To Hire' %>
+      <%= f.radio_button :job_type, 'Direct Hire' %>
+      <%= f.label :job_type_direct_hire, 'Direct Hire' %>
+    </div>
+
+    <div class="input-field col s6" id='duration_field'>
+      <%= f.label :duration %>
+      <%= f.text_field :duration %>
+    </div>
+
+    <div class="input-field col s12">
+      <%= f.label :compensation %>
+      <%= f.text_field :compensation %>
+    </div>
+
+    <div class="input-field col s12">
+      <%= f.label :description %>
+      <%= f.text_area :description, :class => 'materialize-textarea' %>
+    </div>
+
+    <%= f.submit 'Save Job', :class => 'btn btn-default' %>
+    <% end %>
+  </div>
+</div>
