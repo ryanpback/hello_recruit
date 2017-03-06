@@ -20,7 +20,7 @@
         <li><%= link_to 'Sign Up', new_user_registration_path %></li>
       <% end %>
       <% if user_signed_in? %>
-        <% if current_user.admin == true %>
+        <% if can? :new, Job %>
           <li><%= link_to 'Add Job', new_job_path %></li>
         <% end %>
         <li><%= link_to 'Logout', destroy_user_session_path, :method => 'delete' %></li>
@@ -40,7 +40,7 @@
               <li><%= link_to 'Sign Up', new_user_registration_path %></li>
             <% end %>
             <% if user_signed_in? %>
-              <% if current_user.admin == true %>
+              <% if can? :new, Job %>
                 <li><%= link_to 'Add Job', new_job_path %></li>
               <% end %>
               <li><%= link_to 'Logout', destroy_user_session_path, :method => 'delete' %></li>
@@ -56,5 +56,17 @@
       </div>
     </div>
     <%= yield %>
+    <script type="text/javascript">
+      $('.button-collapse').sideNav();
+      $("#job_job_type_contract").click(function() {
+          $('#duration_field').slideDown();
+      });
+      $("#job_job_type_temp_to_hire").click(function() {
+          $('#duration_field').slideUp();
+      });
+      $("#job_job_type_direct_hire").click(function() {
+          $('#duration_field').slideUp();
+      });
+    </script>
   </body>
 </html>

@@ -9,6 +9,7 @@ class JobsController < ApplicationController
 
   def new
     @job = Job.new
+    authorize! :new, @job
   end
 
   def create
@@ -24,6 +25,7 @@ class JobsController < ApplicationController
 
   def edit
     @job = Job.find(params[:id])
+    authorize! :edit, @job
   end
 
   def update

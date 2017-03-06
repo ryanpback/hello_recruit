@@ -7,6 +7,10 @@
       <br>
       <h4 class="center detail-job_type"><%= @job.job_type%></h4>
       <br>
+      <% if @job.duration != '' %>
+        <h5 class="center detail-duration"><%= @job.duration %></h5>
+      <% end %>
+      <br>
       <h4 class="center detail-compensation"><%= @job.compensation %></h4>
       <br>
       <h5 class="detail-skills"><strong>Skills:</strong> <%= @job.skills %></h5>
@@ -14,6 +18,10 @@
       <h5 class="detail-description-head"><strong>Description:</strong></h5>
       <br>
       <h5 class="detail-description"><%= @job.description %></h5>
+      <% if can? :edit, Job %>
+        <%= link_to 'Edit Job', edit_job_path(@job), :class => 'btn btn-defualt' %>
+      <% end %>
+      <div class="btn btn-defualt">Apply</div>
     </div>
   </div>
 </div>
