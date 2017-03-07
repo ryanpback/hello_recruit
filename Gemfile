@@ -23,6 +23,7 @@ gem 'coffee-rails', '~> 4.2'
 gem 'materialize-sass'
 gem 'devise'
 gem 'cancancan'
+gem "paperclip", "~> 5.0.0"
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks

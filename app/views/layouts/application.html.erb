@@ -15,10 +15,10 @@
     <ul class="side-nav" id="mobile-demo">
       <li><%= link_to 'Home', root_path %></li>
       <li><%= link_to 'Jobs', jobs_path %></li>
+      <li><%= link_to 'Users', users_path %></li>
       <% if !user_signed_in? %>
         <li><%= link_to 'Sign In', new_user_session_path %></li>
         <li><%= link_to 'Add User', new_user_registration_path %></li>
-        <li><%= link_to 'Users', users_path %></li>
       <% end %>
       <% if user_signed_in? %>
         <% if can? :new, Job %>
@@ -36,10 +36,10 @@
           <a href="#"  data-activates="mobile-demo" class="button-collapse"><i class="medium material-icons">reorder</i></a>
           <ul class="right hide-on-med-and-down">
             <li><%= link_to 'Jobs', jobs_path %></li>
+            <li><%= link_to 'Users', users_path %></li>
             <% if !user_signed_in? %>
               <li><%= link_to 'Sign In', new_user_session_path %></li>
               <li><%= link_to 'Add User', new_user_registration_path %></li>
-              <li><%= link_to 'Users', users_path %></li>
             <% end %>
             <% if user_signed_in? %>
               <% if can? :new, Job %>
