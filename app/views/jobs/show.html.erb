@@ -21,7 +21,7 @@
       <% if can? :edit, Job %>
         <%= link_to 'Edit Job', edit_job_path(@job), :class => 'btn btn-defualt' %>
       <% end %>
-      <div class="btn btn-defualt">Apply</div>
+      <%= link_to 'Apply!', new_job_apply_path(@job), :class => 'btn' %>
     </div>
   </div>
 </div>

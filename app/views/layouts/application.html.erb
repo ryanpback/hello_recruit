@@ -18,7 +18,7 @@
       <li><%= link_to 'Users', users_path %></li>
       <% if !user_signed_in? %>
         <li><%= link_to 'Sign In', new_user_session_path %></li>
-        <li><%= link_to 'Add User', new_user_registration_path %></li>
+        <li><%= link_to 'Sign Up', new_user_registration_path %></li>
       <% end %>
       <% if user_signed_in? %>
         <% if can? :new, Job %>
@@ -39,7 +39,7 @@
             <li><%= link_to 'Users', users_path %></li>
             <% if !user_signed_in? %>
               <li><%= link_to 'Sign In', new_user_session_path %></li>
-              <li><%= link_to 'Add User', new_user_registration_path %></li>
+              <li><%= link_to 'Sign Up', new_user_registration_path %></li>
             <% end %>
             <% if user_signed_in? %>
               <% if can? :new, Job %>
@@ -58,6 +58,7 @@
       </div>
     </div>
     <%= yield %>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
     <script type="text/javascript">
       $('.button-collapse').sideNav();
       $("#job_job_type_contract").click(function() {
@@ -71,6 +72,23 @@
       });
       $("tr[data-link]").click(function() {
         window.location = this.dataset.link;
+      });
+      var availableSkills = [
+        "HR",
+        "Git",
+        "Bash",
+        "Management",
+        "Ruby",
+        "Ruby on Rails",
+        "JavaScript"
+      ];
+      $('input.autocomplete').autocomplete({
+        source: availableSkills,
+        multiple: {
+          enable: true,
+          maxSize: 10
+        },
+        limit: 20
       });
     </script>
   </body>

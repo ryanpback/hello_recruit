@@ -5,93 +5,106 @@
     <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put, multipart: true }) do |f| %>
       <%= devise_error_messages! %>
 
-      <div class="input-field col s6">
-        <%= f.label :'First Name', :class => 'active' %><br />
-        <%= f.email_field :first_name, autofocus: true %>
-      </div>
 
-      <div class="input-field col s6">
-        <%= f.label :'Last Name', :class => 'active' %><br />
-        <%= f.email_field :last_name, autofocus: true %>
-      </div>
-
-      <div class="input-field col s3">
-        <%= f.label :'Street Address', :class => 'active' %><br />
-        <%= f.email_field :street_address, autofocus: true %>
-      </div>
-
-      <div class="input-field col s3">
-        <%= f.label :'City', :class => 'active' %><br />
-        <%= f.email_field :city, autofocus: true %>
-      </div>
-
-      <div class="input-field col s3">
-        <%= f.label :'State', :class => 'active' %><br />
-        <%= f.email_field :state, autofocus: true %>
-      </div>
-
-      <div class="input-field col s3">
-        <%= f.label :'Zip Code', :class => 'active' %><br />
-        <%= f.email_field :zip_code, autofocus: true %>
-      </div>
-
-      <div class="input-field col s12">
-        <%= f.label :'Skills', :class => 'active' %><br />
-        <%= f.email_field :skills %>
-      </div>
-
-      <div class="input-field col s6">
-        <%= f.label :'Phone Number', :class => 'active' %><br />
-        <%= f.email_field :phone_number, autofocus: true %>
-      </div>
-
-      <div class="input-field col s6">
-        <%= f.label :'Phone Carrier', :class => 'active' %><br />
-        <%= f.email_field :phone_carrier, autofocus: true %>
-      </div>
-
-      <div class="file-field input-field col s6 file-upload">
-        <div class="btn">
-          <span>Resume <i class="fa fa-file-pdf-o" aria-hidden="true"></i></span>
-          <%= f.file_field :resume %>
+      <div class="card edit-card">
+        <div class="edit input-field col s6">
+          <%= f.label :'First Name', :class => 'active' %><br />
+          <%= f.text_field :first_name, autofocus: true %>
         </div>
-        <div class="file-path-wrapper">
-          <input type="text" class="file-path validate">
+
+        <div class="edit input-field col s6">
+          <%= f.label :'Last Name', :class => 'active' %><br />
+          <%= f.text_field :last_name, autofocus: true %>
         </div>
       </div>
 
-      <div class="file-field input-field col s6 file-upload">
-        <div class="btn">
-          <span>Cover Letter <i class="fa fa-file-word-o" aria-hidden="true"></i></span>
-          <%= f.file_field :cover_letter %>
+      <div class="card edit-card">
+        <div class="edit input-field col s3">
+          <%= f.label :'Street Address', :class => 'active' %><br />
+          <%= f.text_field :street_address, autofocus: true %>
         </div>
-        <div class="file-path-wrapper">
-          <input type="text" class="file-path validate">
+
+        <div class="edit input-field col s3">
+          <%= f.label :'City', :class => 'active' %><br />
+          <%= f.text_field :city, autofocus: true %>
+        </div>
+
+        <div class="edit input-field col s3">
+          <%= f.label :'State', :class => 'active' %><br />
+          <%= f.text_field :state, autofocus: true %>
+        </div>
+
+        <div class="edit input-field col s3">
+          <%= f.label :'Zip Code', :class => 'active' %><br />
+          <%= f.text_field :zip_code, autofocus: true %>
         </div>
       </div>
 
-      <div class="input-field col s4">
-        <%= f.label :email, :class => 'active' %><br />
-        <%= f.email_field :email, autofocus: true %>
+      <div class="card edit-card">
+        <div class="edit input-field col s12">
+          <%= f.text_field :skills, :class => 'autocomplete' %>
+          <%= f.label :skills, :class => 'active' %><br />
+        </div>
       </div>
 
-      <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-      <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
-      <% end %>
+      <div class="card edit-card">
+        <div class="edit input-field col s6">
+          <%= f.label :'Phone Number', :class => 'active' %><br />
+          <%= f.text_field :phone_number, autofocus: true %>
+        </div>
 
-      <div class="input-field col s4">
-        <%= f.label :"New Password" %><br />
-        <%= f.password_field :password, autocomplete: "off" %>
+        <div class="edit input-field col s6">
+          <%= f.label :'Phone Carrier', :class => 'active' %><br />
+          <%= f.text_field :phone_carrier, autofocus: true %>
+        </div>
       </div>
 
-      <div class="input-field col s4">
-        <%= f.label :password_confirmation %><br />
-        <%= f.password_field :password_confirmation, autocomplete: "off" %>
+      <div class="card edit-card">
+        <div class="file-field edit input-field col s6 file-upload">
+          <div class="btn">
+            <span>Resume <i class="fa fa-file-pdf-o" aria-hidden="true"></i></span>
+            <%= f.file_field :resume %>
+          </div>
+          <div class="file-path-wrapper">
+            <input type="text" class="file-path validate">
+          </div>
+        </div>
+
+        <div class="file-field edit input-field col s6 file-upload">
+          <div class="btn">
+            <span>Cover Letter <i class="fa fa-file-word-o" aria-hidden="true"></i></span>
+            <%= f.file_field :cover_letter %>
+          </div>
+          <div class="file-path-wrapper">
+            <input type="text" class="file-path validate">
+          </div>
+        </div>
       </div>
 
-      <div class="input-field col s12">
-        <%= f.label :"Current Password - Needed to save changes" %><br />
-        <%= f.password_field :current_password, autocomplete: "off" %>
+      <div class="card edit-card">
+        <div class="edit input-field col s3">
+          <%= f.label :email, :class => 'active' %><br />
+          <%= f.email_field :email, autofocus: true %>
+        </div>
+
+        <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+        <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+        <% end %>
+
+        <div class="edit input-field col s3">
+          <%= f.label :"New Password" %><br />
+          <%= f.password_field :password, autocomplete: "off" %>
+        </div>
+
+        <div class="edit input-field col s3">
+          <%= f.label :password_confirmation %><br />
+          <%= f.password_field :password_confirmation, autocomplete: "off" %>
+        </div>
+
+        <div class="edit input-field col s3">
+          <%= f.label :"Current Password - Needed to save changes" %><br />
+          <%= f.password_field :current_password, autocomplete: "off" %>
+        </div>
       </div>
 
 

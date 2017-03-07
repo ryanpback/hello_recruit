@@ -30,10 +30,21 @@ li {
 
 .card {
   text-align: center;
-  min-height: 300px;
 }
-/********* JOBS *********/
 
+.job-card {
+  min-height: 300px;
+  position: relative;
+}
+
+#no-job-title {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/********* JOBS *********/
 table.bordered {
   border: 1px solid #000;
 }
@@ -51,3 +62,22 @@ td {
 .file-upload {
   margin-bottom: 30px;
 }
+
+.edit-card {
+  height: 132px;
+}
+
+.edit {
+  margin-top: 50px;
+}
+/********* END JOBS *********/
+
+/********* APPLICATIONS *********/
+.application-card {
+  height: 132px;
+}
+
+.apply {
+  margin-top: 50px;
+}
+/********* END APPLICATIONS *********/

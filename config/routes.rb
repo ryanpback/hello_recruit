@@ -3,4 +3,8 @@ Rails.application.routes.draw do
   root 'home#index'
   resources :jobs
   resources :users, only: [:index, :show]
+
+  resources :jobs do
+    resources :applies
+  end
 end
