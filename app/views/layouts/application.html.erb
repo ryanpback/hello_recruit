@@ -66,9 +66,11 @@
       });
       $("#job_job_type_temp_to_hire").click(function() {
           $('#duration_field').slideUp();
+          $('input#job_duration').val('');
       });
       $("#job_job_type_direct_hire").click(function() {
           $('#duration_field').slideUp();
+          $('input#job_duration').val('');
       });
       $("tr[data-link]").click(function() {
         window.location = this.dataset.link;
