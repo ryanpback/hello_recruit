@@ -78,6 +78,7 @@
       </div>
     </div>
     <%= f.hidden_field :user_id, :value => current_user.id %>
+    <%= f.hidden_field :job_id, :value => @job.id %>
 
     <div class="actions col s12">
       <%= f.submit "Apply", :class => 'btn'%>

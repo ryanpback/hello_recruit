@@ -11,6 +11,6 @@ class User < ApplicationRecord
   has_attached_file :cover_letter, styles: {icon: "100x100>"}
   validates_attachment_content_type :cover_letter, content_type: { content_type: %w(application/pdf application/msword application/vnd.openxmlformats-officedocument.wordprocessingml.template) }
 
-  has_many :jobs
-  has_many :applies, through: :jobs
+  has_many :applies
+  has_many :jobs, through: :applies
 end

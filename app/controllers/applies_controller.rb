@@ -18,6 +18,6 @@ class AppliesController < ApplicationController
 
 private
   def apply_params
-    params.require(:application).permit(:first_name, :last_name, :email, :phone_number, :skills, :street_address, :city, :state, :zip_code, :resume, :cover_letter, :job_id, :user_id)
+    params.require(:apply).permit(:first_name, :last_name, :email, :phone_number, :skills, :street_address, :city, :state, :zip_code, :resume, :cover_letter, :job_id, :user_id)
   end
 end

@@ -8,7 +8,7 @@ class Apply < ActiveRecord::Base
   validates :city, presence: true
   validates :state, presence: true
   validates :zip_code, presence: true
-  validates :resume, presence: true
+  # validates :resume, presence: true
 
   has_attached_file :resume, styles: {icon: "100x100>"}
   validates_attachment_content_type :resume, content_type: { content_type: %w(application/pdf application/msword application/vnd.openxmlformats-officedocument.wordprocessingml.template) }
