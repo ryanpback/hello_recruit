@@ -1,4 +1,36 @@
 @import "materialize";
+/********** INDEX PAGE *************/
+.splash {
+  height: 50vh;
+  width: 100vw;
+  position: relative;
+}
+
+#image-column {
+  background-image: url('bridges.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 100%;
+  filter: brightness(60%);
+}
+
+#hello_recruit-head {
+  position: absolute;
+  top: 4%;
+  left: 6%;
+}
+
+
+
+
+
+/********** INDEX PAGE *************/
+
+
+
+
+
 
 .flashes {
   margin-top: 60px;

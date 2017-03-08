@@ -12,8 +12,9 @@
   </head>
 
   <body>
-    <ul class="side-nav" id="mobile-demo">
-      <li><%= link_to 'Home', root_path %></li>
+    <div class="splash">
+      <div id="image-column"></div>
+      <h2 id="hello_recruit-head">HelloRecruit</h2>
       <li><%= link_to 'Jobs', jobs_path %></li>
       <% if !user_signed_in? %>
         <li><%= link_to 'Sign In', new_user_session_path %></li>
@@ -21,57 +22,47 @@
       <% end %>
       <% if user_signed_in? %>
         <% if can? :manage, :all %>
-          <li><%= link_to 'Add Job', new_job_path %></li>
-          <li><%= link_to 'Candidates', users_path %></li>
-        <% end %>
-        <li><%= link_to 'Logout', destroy_user_session_path, :method => 'delete' %></li>
-      <% end %>
-    </ul>
-    <div class="nav-head navbar-fixed">
-      <nav>
-        <div class="nav-wrapper">
-          <div id="initials">
-            <%= link_to 'Hello Recruit', root_path, :class => 'brand-logo' %>
-          </div>
-          <a href="#"  data-activates="mobile-demo" class="button-collapse"><i class="medium material-icons">reorder</i></a>
-          <ul class="right hide-on-med-and-down">
-            <li><%= link_to 'Jobs', jobs_path %></li>
-            <% if !user_signed_in? %>
-              <li><%= link_to 'Sign In', new_user_session_path %></li>
-              <li><%= link_to 'Sign Up', new_user_registration_path %></li>
-            <% end %>
-            <% if user_signed_in? %>
-              <% if can? :manage, :all %>
-                <li><%= link_to 'Add Job', new_job_path %></li>
-                <li><%= link_to 'Candidates', users_path %></li>
-              <% end %>
-              <li><%= link_to 'Profile', user_path(current_user) %></li>
-              <li><%= link_to 'Logout', destroy_user_session_path, :method => 'delete' %></li>
-            <% end %>
+        <a class='admin-dropdown' href='#' data-activates='dropdown1'>Admin <i class="fa fa-caret-down" aria-hidden="true"></i></a>
+          <ul id="dropdown1" class="dropdown-content">
+            <li><%= link_to 'Add Job', new_job_path %></li>
+            <li><%= link_to 'Candidates', users_path %></li>
+            <li class="divider"></li>
+            <li><%= link_to 'Logout', destroy_user_session_path, :method => 'delete' %></li>
           </ul>
-        </div>
+        <% end %>
+        <li><%= link_to 'Profile', user_path(current_user) %></li>
+      <% end %>
+      <nav>
+        <ul class="right">
+          <li></li>
+          <li></li>
+        </ul>
       </nav>
-    </div>
-    <div class="container">
-      <div class="flashes">
-        <p class="notice"><%= flash[:notice] %></p>
-        <p class="alert"><%= flash[:alert] %></p>
-      </div>
     </div>
     <%= yield %>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
     <script type="text/javascript">
-      $('.button-collapse').sideNav();
+    $('.admin-dropdown').dropdown({
+        inDuration: 300,
+        outDuration: 225,
+        constrainWidth: false,
+        hover: true,
+        gutter: 0,
+        belowOrigin: false,
+        alignment: 'left',
+        stopPropagation: false
+      }
+    );
       $("#job_job_type_contract").click(function() {
-          $('#duration_field').slideDown();
+        $('#duration_field').slideDown();
       });
       $("#job_job_type_temp_to_hire").click(function() {
-          $('#duration_field').slideUp();
-          $('input#job_duration').val('');
+        $('#duration_field').slideUp();
+        $('input#job_duration').val('');
       });
       $("#job_job_type_direct_hire").click(function() {
-          $('#duration_field').slideUp();
-          $('input#job_duration').val('');
+        $('#duration_field').slideUp();
+        $('input#job_duration').val('');
       });
       $("tr[data-link]").click(function() {
         window.location = this.dataset.link;
