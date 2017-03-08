@@ -1,7 +1,34 @@
 @import "materialize";
 /********** INDEX PAGE *************/
+.my-nav {
+  position: fixed;
+  z-index: 1;
+  width: 100%;
+  background-color: rgba(25, 34, 49, 0.8);
+  height: 50px;
+}
+
+a#hello-header {
+  position: inherit;;
+  font-size: 2em;
+  color: #fff;
+  margin-left: 20px;
+  margin-bottom: 0;
+  margin-top: 3px;
+}
+
+.nav-links {
+  float: right;
+  margin-right: 20px;
+  margin-top: 12px;
+  a {
+    color: #fff;
+    font-size: 1.2em;
+  }
+}
+
 .splash {
-  height: 50vh;
+  height: 60vh;
   width: 100vw;
   position: relative;
 }
@@ -15,13 +42,49 @@
   filter: brightness(60%);
 }
 
-#hello_recruit-head {
+.welcome {
   position: absolute;
-  top: 4%;
-  left: 6%;
+  border-radius: 30px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(152, 135, 143, 0.6);
+  .welcome-title {
+    color: #fff;
+    font-size: 4em;
+    padding-right: 30px;
+    padding-left: 30px;
+    margin-bottom: 0;
+  }
+  .welcome-connect {
+    color: #fff;
+    font-size: 2em;
+    margin-bottom: 21.170px;
+  }
+  span {
+    font-weight: 100;
+  }
 }
 
+@media screen and (min-width: 901px) {
+  .nav-links {
+    margin-right: 40px;
+  }
+}
 
+.industry-card {
+  background-color: #494E6B;
+  min-height: 250px;
+}
+
+.industry-titles {
+  padding-top: 30px;
+}
+
+.industry-info {
+  padding-right: 15px;
+  padding-left: 15px;
+}
 
 
 
