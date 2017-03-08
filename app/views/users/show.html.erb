@@ -8,6 +8,7 @@
       <p class="user-city-state">City/State: <%= @user.city %>, <%= @user.state %></p>
       <p class="user-zip_code">Zip Code: <%= @user.zip_code %></p>
       <p class="user-skills">Listed Skills: <%= @user.skills %></p>
+      <%= link_to 'Cover Letter', @user.cover_letter.url, target: '_blank' %>
     </div>
   </div>
 </div>
@@ -33,7 +34,7 @@
           <td><%= job.title %></td>
           <td><%= job.location %></td>
           <td><%= job.job_type %></td>
-          <td><%= job.compensation %></td>
+          <td>$<%= job.compensation %></td>
         </tr>
         <% end %>
       </tbody>
