@@ -45,25 +45,24 @@ a#hello-header {
   background-position: center;
   background-size: cover;
   height: 100%;
-  filter: brightness(60%);
+  filter: brightness(40%);
 }
 
 .welcome {
+  animation: fadein 6s;
   position: absolute;
-  border-radius: 30px;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: rgba(247, 245, 230, 0.4);
   .welcome-title {
-    color: #333A56;
+    color: #fff;
     font-size: 4em;
     padding-right: 30px;
     padding-left: 30px;
     margin-bottom: 0;
   }
   .welcome-connect {
-    color: #333A56;
+    color: #fff;
     font-size: 2em;
     margin-bottom: 21.170px;
     padding-left: 30px;
@@ -72,6 +71,10 @@ a#hello-header {
   span {
     font-weight: 100;
   }
+}
+@keyframes fadein {
+  from { opacity: 0;}
+  to { opacity: 1; }
 }
 
 @media screen and (min-width: 901px) {
@@ -198,9 +201,23 @@ li {
 
 #job-outlook {
   margin-top: 0;
+  color: $beige;
 }
 
-#outlook-info {
+.job-outlook-column {
+  .headers {
+    font-size: 20px;
+    color: $beige;
+  }
+  .outlook-info {
+    font-size: 17px;
+    margin-top: -8px;
+    color: $beige;
+  }
+}
+
+#job-list-title {
+  color: $blue;
 }
 
 .jobs-row {
