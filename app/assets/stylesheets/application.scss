@@ -263,6 +263,37 @@ td {
 .edit {
   margin-top: 50px;
 }
+
+.new-job {
+  height: 100vh;
+  background-color: $beige;
+  position: relative;
+}
+
+.new-job-card {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 700px;
+  background-color: $blue;
+}
+
+[type="radio"]:not(:checked) + label, [type="radio"]:checked + label {
+  padding-left: 27px;
+  padding-right: 30px;
+}
+
+.new-job-header {
+  margin-top: 0;
+  padding-top: 35px;
+  color: #fff;
+}
+
+
+
+
+
 /********* END JOBS *********/
 
 /********* APPLICATIONS *********/
@@ -318,6 +349,8 @@ footer {
   }
   input {
     border-bottom: 1px solid $beige;
+    color: #fff;
+    font-size: 20px;
   }
   input[type=email]:focus:not([readonly]) {
     border-bottom: 1px solid #fff;

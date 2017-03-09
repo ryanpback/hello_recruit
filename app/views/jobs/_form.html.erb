@@ -1,42 +1,53 @@
-<%= render "layouts/errors", :object => @job %>
-<div class="job-form row" data-role='page'>
-  <div class="col s12">
-    <%= form_for @job do |f| %>
-    <div class="input-field col s12">
-      <%= f.label :title %>
-      <%= f.text_field :title %>
+<div class="errors">
+  <%= render "layouts/errors", :object => @job %>
+</div>
+<div class="new-job">
+  <div class="container">
+    <div class="card new-job-card">
+      <div class="row">
+        <div class="job-form row" data-role='page'>
+          <div class="col s12">
+            <h4 class="new-job-header">Add Job</h4>
+            <%= form_for @job do |f| %>
+            <div class="input-field col s8 offset-s2">
+              <%= f.label :title %>
+              <%= f.text_field :title %>
+            </div>
+            <div class="input-field col s8 offset-s2">
+              <%= f.label :location %>
+              <%= f.text_field :location %>
+            </div>
+            <div class="col s8 offset-s2 radio-buttons">
+              <%= f.radio_button :job_type, 'Contract' %>
+              <%= f.label :job_type_contract, 'Contract' %>
+              <%= f.radio_button :job_type, 'Temp to Hire' %>
+              <%= f.label :job_type_temp_to_hire, 'Temp to Hire' %>
+              <%= f.radio_button :job_type, 'Direct Hire' %>
+              <%= f.label :job_type_direct_hire, 'Direct Hire' %>
+            </div>
+            <div class="input-field col s8 offset-s2" id='duration_field'>
+              <%= f.label :duration %>
+              <%= f.text_field :duration %>
+            </div>
+            <div class="input-field col s8 offset-s2">
+              <%= f.label :compensation %>
+              <%= f.text_field :compensation %>
+            </div>
+            <div class="input-field col s8 offset-s2">
+              <%= f.label :'skills_(comma separated)' %>
+              <%= f.text_field :skills, :class => 'autocomplete' %>
+            </div>
+            <div class="input-field col s8 offset-s2">
+              <%= f.label :description %>
+              <%= f.text_area :description, :class => 'materialize-textarea' %>
+            </div>
+            <div class="col s12">
+              <%= f.submit 'Save Job', :class => 'btn btn-default' %>
+            </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="input-field col s12">
-      <%= f.label :location %>
-      <%= f.text_field :location %>
-    </div>
-    <div class="col s6 radio-buttons">
-      <%= f.radio_button :job_type, 'Contract' %>
-      <%= f.label :job_type_contract, 'Contract' %>
-      <%= f.radio_button :job_type, 'Temp to Hire' %>
-      <%= f.label :job_type_temp_to_hire, 'Temp to Hire' %>
-      <%= f.radio_button :job_type, 'Direct Hire' %>
-      <%= f.label :job_type_direct_hire, 'Direct Hire' %>
-    </div>
-    <div class="input-field col s6" id='duration_field'>
-      <%= f.label :duration %>
-      <%= f.text_field :duration %>
-    </div>
-    <div class="input-field col s12">
-      <%= f.label :compensation %>
-      <%= f.text_field :compensation %>
-    </div>
-    <div class="input-field col s12">
-      <%= f.label :'skills_(comma separated)' %>
-      <%= f.text_field :skills, :class => 'autocomplete' %>
-    </div>
-    <div class="input-field col s12">
-      <%= f.label :description %>
-      <%= f.text_area :description, :class => 'materialize-textarea' %>
-    </div>
-    <div class="col s12">
-      <%= f.submit 'Save Job', :class => 'btn btn-default' %>
-    </div>
-    <% end %>
   </div>
 </div>
