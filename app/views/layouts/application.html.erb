@@ -90,6 +90,16 @@
         },
         limit: 20
       });
+      $(window).scroll(function() { // check if scroll event happened
+        if ($(document).scrollTop() > 50) {
+          $(".my-nav").css({
+            'transition': 'background-color 2s ease',
+            "background-color": "rgb(51, 58, 86)"
+          });
+        } else {
+          $(".my-nav").css("background-color", "rgba(51, 58, 86, 0.8)");
+        }
+      });
     </script>
   </body>
 </html>

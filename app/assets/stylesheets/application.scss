@@ -322,7 +322,6 @@ footer {
 
 /********* LOGIN ************/
 .login {
-  z-index: 0;
   height: 100vh;
   position: relative;
   background-color: $beige;
@@ -330,7 +329,6 @@ footer {
 
 .login-card {
   background-color: $blue;
-  z-index: 0;
   position: absolute;
   width: 300px;
   top: 50%;
@@ -354,15 +352,60 @@ footer {
   }
   input[type=email]:focus:not([readonly]) {
     border-bottom: 1px solid #fff;
+    font-size: 20px;
   }
   input[type=password]:focus:not([readonly]) {
     border-bottom: 1px solid #fff;
+    font-size: 20px;
   }
 }
 
 @media screen and (min-width: 550px) {
   .login-card {
     width: 500px;
+  }
+}
+
+.sign-up {
+  height: 100vh;
+  position: relative;
+  background-color: $beige;
+}
+
+.signup-card {
+  background-color: $blue;
+  position: absolute;
+  width: 700px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.signup-header {
+  color: #fff;
+}
+
+.signup-input {
+  label {
+    font-size: 18px;
+    color: #fff;
+  }
+  input {
+    border-bottom: 1px solid $beige;
+    color: #fff;
+    font-size: 20px;
+  }
+  input[type=text]:focus:not([readonly]) {
+    border-bottom: 1px solid #fff;
+    font-size: 20px;
+  }
+  input[type=email]:focus:not([readonly]) {
+    border-bottom: 1px solid #fff;
+    font-size: 20px;
+  }
+  input[type=password]:focus:not([readonly]) {
+    border-bottom: 1px solid #fff;
+    font-size: 20px;
   }
 }
 

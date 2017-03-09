@@ -1,38 +1,44 @@
+<div class="sign-up">
+  <div class="container">
+    <div class="card signup-card">
+      <div class="row">
+        <h2 class="center signup-header">Sign Up</h2>
+        <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+        <%= devise_error_messages! %>
 
-<div class="new-user-form">
-  <h2>Create User</h2>
+        <div class="input-field col s8 offset-s2 signup-input">
+          <%= f.label :'First Name' %><br />
+          <%= f.text_field :first_name, autofocus: true %>
+        </div>
 
-  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-    <%= devise_error_messages! %>
+        <div class="input-field col s8 offset-s2 signup-input">
+          <%= f.label :'Last Name' %><br />
+          <%= f.text_field :last_name, autofocus: true %>
+        </div>
 
-    <div class="input-field col s12">
-      <%= f.label :'First Name' %><br />
-      <%= f.email_field :first_name, autofocus: true %>
+        <div class="input-field col s8 offset-s2 signup-input">
+          <%= f.label :email %><br />
+          <%= f.email_field :email, autofocus: true %>
+        </div>
+
+        <div class="input-field col s8 offset-s2 signup-input">
+          <%= f.label :'password (6 characters minimum)' %>
+          <%= f.password_field :password, autocomplete: "off" %>
+        </div>
+
+        <div class="input-field col s8 offset-s2 signup-input">
+          <%= f.label :password_confirmation %><br />
+          <%= f.password_field :password_confirmation, autocomplete: "off" %>
+        </div>
+
+        <div class="actions col s12">
+          <%= f.submit "Sign up", :class => 'btn view-button' %>
+        </div>
+        <% end %>
+        <div class="col s12">
+          <%= render "devise/shared/links" %>
+        </div>
+      </div>
     </div>
-
-    <div class="input-field col s12">
-      <%= f.label :'Last Name' %><br />
-      <%= f.email_field :last_name, autofocus: true %>
-    </div>
-
-    <div class="input-field col s12">
-      <%= f.label :email %><br />
-      <%= f.email_field :email, autofocus: true %>
-    </div>
-
-    <div class="input-field col s12">
-      <%= f.label :'password (6 characters minimum)' %>
-      <%= f.password_field :password, autocomplete: "off" %>
-    </div>
-
-    <div class="input-field col s12">
-      <%= f.label :password_confirmation %><br />
-      <%= f.password_field :password_confirmation, autocomplete: "off" %>
-    </div>
-
-    <div class="actions">
-      <%= f.submit "Sign up", :class => 'btn' %>
-    </div>
-  <% end %>
-  <%= render "devise/shared/links" %>
+  </div>
 </div>
