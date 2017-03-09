@@ -137,8 +137,14 @@ a#hello-header {
 
 .collapsible-header {
   line-height: 1px;
+  transition: background-color 1s ease;
   background-color: rgba(51, 58, 86, 0.8);
   color: #fff;
+}
+
+.collapsible-header:hover {
+  background-color: $blue;
+  transition: 1s;
 }
 
 .collapsible-body {
@@ -228,19 +234,8 @@ li {
 }
 
 ul.collapsible {
-  // background-color: rgba(51, 58, 86, 0.8);
   border-color: none;
-  z-index: 1;
 }
-
-
-
-
-
-
-
-
-
 
 
 table.bordered {
@@ -280,6 +275,7 @@ td {
 }
 /********* END APPLICATIONS *********/
 
+/********* FOOTER ************/
 footer {
   margin-top: -20px;
 }
@@ -291,3 +287,52 @@ footer {
 .fa {
   font-size: 2em;
 }
+/********* END FOOTER ************/
+
+/********* LOGIN ************/
+.login {
+  z-index: 0;
+  height: 100vh;
+  position: relative;
+  background-color: $beige;
+}
+
+.login-card {
+  background-color: $blue;
+  z-index: 0;
+  position: absolute;
+  width: 300px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.login-header {
+  color: #fff;
+}
+
+.login-input {
+  label {
+    font-size: 18px;
+    color: #fff;
+  }
+  input {
+    border-bottom: 1px solid $beige;
+  }
+  input[type=email]:focus:not([readonly]) {
+    border-bottom: 1px solid #fff;
+  }
+  input[type=password]:focus:not([readonly]) {
+    border-bottom: 1px solid #fff;
+  }
+}
+
+@media screen and (min-width: 550px) {
+  .login-card {
+    width: 500px;
+  }
+}
+
+
+
+/********* END LOGIN ************/
