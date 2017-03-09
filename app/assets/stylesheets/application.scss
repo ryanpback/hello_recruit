@@ -1,17 +1,23 @@
 @import "materialize";
+
+$blue: rgb(51, 58, 86);
+$beige: rgb(247, 245, 230);
+$light-blue: rgb(82, 101, 143);
+$grey: rgb(232, 232, 232);
+
 /********** INDEX PAGE *************/
 .my-nav {
   position: fixed;
   z-index: 1;
   width: 100%;
-  background-color: rgba(25, 34, 49, 0.8);
+  background-color: rgba(51, 58, 86, 0.8);
   height: 50px;
 }
 
 a#hello-header {
   position: inherit;;
   font-size: 2em;
-  color: #fff;
+  color: #F7F5E6;
   margin-left: 20px;
   margin-bottom: 0;
   margin-top: 3px;
@@ -22,7 +28,7 @@ a#hello-header {
   margin-right: 20px;
   margin-top: 12px;
   a {
-    color: #fff;
+    color: #F7F5E6;
     font-size: 1.2em;
   }
 }
@@ -33,7 +39,7 @@ a#hello-header {
   position: relative;
 }
 
-#image-column {
+.image-column {
   background-image: url('bridges.jpg');
   background-repeat: no-repeat;
   background-position: center;
@@ -48,18 +54,20 @@ a#hello-header {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: rgba(152, 135, 143, 0.6);
+  background-color: rgba(247, 245, 230, 0.4);
   .welcome-title {
-    color: #fff;
+    color: #333A56;
     font-size: 4em;
     padding-right: 30px;
     padding-left: 30px;
     margin-bottom: 0;
   }
   .welcome-connect {
-    color: #fff;
+    color: #333A56;
     font-size: 2em;
     margin-bottom: 21.170px;
+    padding-left: 30px;
+    padding-right: 30px;
   }
   span {
     font-weight: 100;
@@ -72,32 +80,52 @@ a#hello-header {
   }
 }
 
+.industries-row {
+  background-color: #F7F5E6;
+  padding-top: 11px;
+  padding-bottom: 55px;
+  margin-bottom: 0;
+}
+
+#we-serve {
+  margin-bottom: 25px;
+  color: #333A56;
+}
+
 .industry-card {
-  background-color: #494E6B;
+  background-color: #52658F;
   min-height: 250px;
 }
 
 .industry-titles {
   padding-top: 30px;
+  margin-bottom: 0;
+  color: #E8E8E8;
+}
+
+.underline {
+  border-bottom: 1px solid #fff;
+  margin-top: 4px;
+}
+
+.underline2 {
+  border-bottom: 1px solid #fff;
+  margin-top: 4px;
 }
 
 .industry-info {
   padding-right: 15px;
   padding-left: 15px;
+  color: #E8E8E8;
+  font-size: 20px;
 }
-
-
-
 /********** INDEX PAGE *************/
 
-
-
-
-
-
-.flashes {
-  margin-top: 60px;
-}
+// .flashes {
+//   margin-top: 200px;
+//   z-index: 1;
+//   font-size: 100px;
+// }
 
 /********* JOBS *********/
 #duration_field {
@@ -106,21 +134,43 @@ a#hello-header {
 
 .collapsible-header {
   line-height: 1px;
+  background-color: rgba(51, 58, 86, 0.8);
+  color: #fff;
 }
 
 .collapsible-body {
   line-height: 5px;
+  color: #fff;
+  font-size: 18px;
+  background-color: $blue;
+}
+
+.view-button {
+  margin-top: 10px;
+  background-color: $beige;
+  color: $blue;
+  &:hover {
+    background-color: $grey;
+    color: #fff;
+  }
 }
 
 #first-head {
   font-size: 1.4em;
+  margin-top: 0;
+  padding-top: 20px;
 }
 
 #second-head {
   font-size: 1.2em;
 }
+
 li {
   list-style: none;
+}
+
+.compensation-p {
+  margin-top: 6px;
 }
 
 .card {
@@ -139,7 +189,43 @@ li {
   transform: translate(-50%, -50%);
 }
 
-/********* JOBS *********/
+.outlook-row {
+  width: 100%;
+  background-color: rgba(82, 101, 143, 0.6);
+  padding-top: 27px;
+  padding-bottom: 18px;
+}
+
+#job-outlook {
+  margin-top: 0;
+}
+
+#outlook-info {
+}
+
+.jobs-row {
+  width: 100%;
+  background-color: #F7F5E6;
+  padding-bottom: 17px;
+  margin-top: -19px;
+}
+
+ul.collapsible {
+  // background-color: rgba(51, 58, 86, 0.8);
+  border-color: none;
+  z-index: 1;
+}
+
+
+
+
+
+
+
+
+
+
+
 table.bordered {
   border: 1px solid #000;
 }
@@ -176,3 +262,15 @@ td {
   margin-top: 50px;
 }
 /********* END APPLICATIONS *********/
+
+footer {
+  margin-top: -20px;
+}
+
+.page-footer {
+  background-color: #333333;
+}
+
+.fa {
+  font-size: 2em;
+}

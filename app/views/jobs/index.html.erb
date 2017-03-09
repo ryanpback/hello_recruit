@@ -1,31 +1,67 @@
-<% if @jobs.any? %>
-  <% @jobs.each do |job| %>
-    <ul class="collapsible" data-collapsible="accordion">
-      <li>
-        <div class="collapsible-header">
-          <p id="first-head"><%= job.title %></p><br>
-          <p id="second-head"><%= job.job_type %> | <%= job.location %></p>
-        </div>
-        <div class="collapsible-body">
-          <p>Compensation: <%= job.compensation %></p><br>
-          <% if job.duration != '' %>
-            <p>Duration: <%= job.duration %></p><br>
-          <% end %>
-          <p>Skills Needed: <%= job.skills %></p><br>
-          <p>Description:</p>
-          <p><%= job.description %></p>
-          <br>
-          <%= link_to 'View Job', job_path(job), :class => 'btn btn-default' %>
-        </div>
-      </li>
-    </ul>
-  <% end %>
-<% else %>
-  <div class="row no-jobs">
-    <div class="col s8 offset-s2 ">
-      <div class="card job-card">
-        <h2 id='no-job-title'>There are currently no job postings</h2>
-      </div>
+<div class="splash">
+  <div class="image-column"></div>
+  <div class="welcome">
+    <h3 class="center welcome-title">Jobs Await!</h3>
+    <br>
+    <h3 class="center welcome-connect">Let's get you into a position that fits you.</h3>
+  </div>
+</div>
+
+<div class="row outlook-row">
+  <div class="container">
+    <h2 id="job-outlook">Job Outlook</h2>
+    <div class="col s12 m4" id="job-outlook-column">
+      <p class="headers"><strong>Portland</strong></p>
+      <p id='outlook-info1'>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae voluptatum magni eaque quae ullam dolorum!
+      </p>
+    </div>
+    <div class="col s12 m4" id="job-outlook-column">
+      <p class="headers"><strong>Vacouver</strong></p>
+      <p id='outlook-info1'>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae voluptatum magni eaque quae ullam dolorum!
+      </p>
+    </div>
+    <div class="col s12 m4" id="job-outlook-column">
+      <p class="headers"><strong>Eugene</strong></p>
+      <p id='outlook-info1'>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae voluptatum magni eaque quae ullam dolorum!
+      </p>
     </div>
   </div>
-<% end %>
+</div>
+<div class="row jobs-row">
+  <div class="container">
+    <div class="col s12">
+      <h2 id="job-list-title">Job Listing</h2>
+      <% if @jobs.any? %>
+      <% @jobs.each do |job| %>
+      <ul class="collapsible" data-collapsible="accordion">
+        <li>
+          <div class="collapsible-header">
+            <p id="first-head"><%= job.title %></p><br>
+            <p id="second-head"><%= job.job_type %> | <%= job.location %></p>
+          </div>
+          <div class="collapsible-body">
+            <p class='compensation-p'>Compensation: $<%= job.compensation %></p><br>
+            <% if job.duration != '' %>
+            <p>Duration: <%= job.duration %></p><br>
+            <% end %>
+            <p>Requirements: <%= job.skills %></p><br>
+            <%= link_to 'View Job', job_path(job), :class => 'btn btn-default view-button' %>
+          </div>
+        </li>
+      </ul>
+      <% end %>
+      <% else %>
+      <div class="row no-jobs">
+        <div class="col s8 offset-s2 ">
+          <div class="card job-card">
+            <h2 id='no-job-title'>There are currently no job postings</h2>
+          </div>
+        </div>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div>
