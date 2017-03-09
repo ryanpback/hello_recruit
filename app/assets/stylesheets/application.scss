@@ -619,3 +619,16 @@ td {
   text-align: left;
 }
 /********* END JOB DETAIL ************/
+
+.application-job {
+  height: 100vh;
+  background-color: $beige;
+  position: relative;
+}
+
+.app-form {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

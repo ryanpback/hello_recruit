@@ -22,7 +22,9 @@
         <% if can? :edit, Job %>
         <%= link_to 'Edit Job', edit_job_path(@job), :class => 'btn btn view-button' %>
         <% end %>
-        <%= link_to 'Apply!', new_job_apply_path(@job), :class => 'btn view-button' %>
+        <% if user_signed_in? %>
+          <%= link_to 'Apply!', new_job_apply_path(@job), :class => 'btn view-button' %>
+        <% end %>
       </div>
     </div>
   </div>

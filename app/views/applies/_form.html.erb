@@ -1,88 +1,90 @@
 <%= render "layouts/errors", :object => @apply %>
 
-<div class="container">
-  <div class="row">
-    <%= form_for [@job, @apply] do |f| %>
-    <div class="card application-card">
-      <div class="apply input-field col s6">
-        <%= f.label :'First Name', :class => 'active' %><br />
-        <%= f.text_field :first_name, autofocus: true %>
-      </div>
-
-      <div class="apply input-field col s6">
-        <%= f.label :'Last Name', :class => 'active' %><br />
-        <%= f.text_field :last_name, autofocus: true %>
-      </div>
-    </div>
-
-    <div class="card application-card">
-      <div class="apply input-field col s3">
-        <%= f.label :'Street Address', :class => 'active' %><br />
-        <%= f.text_field :street_address, autofocus: true %>
-      </div>
-
-      <div class="apply input-field col s3">
-        <%= f.label :'City', :class => 'active' %><br />
-        <%= f.text_field :city, autofocus: true %>
-      </div>
-
-      <div class="apply input-field col s3">
-        <%= f.label :'State', :class => 'active' %><br />
-        <%= f.text_field :state, autofocus: true %>
-      </div>
-
-      <div class="apply input-field col s3">
-        <%= f.label :'Zip Code', :class => 'active' %><br />
-        <%= f.text_field :zip_code, autofocus: true %>
-      </div>
-    </div>
-
-    <div class="card application-card">
-      <div class="apply input-field col s12">
-        <%= f.text_field :skills, :class => 'autocomplete' %>
-        <%= f.label :skills, :class => 'active' %><br />
-      </div>
-    </div>
-
-    <div class="card application-card">
-      <div class="apply input-field col s6">
-        <%= f.label :'Phone Number', :class => 'active' %><br />
-        <%= f.text_field :phone_number, autofocus: true %>
-      </div>
-
-      <div class="apply input-field col s6">
-        <%= f.label :email, :class => 'active' %><br />
-        <%= f.email_field :email, autofocus: true %>
-      </div>
-    </div>
-
-    <div class="card application-card">
-      <div class="file-field apply input-field col s6 file-upload">
-        <div class="btn">
-          <span>Resume <i class="fa fa-file-pdf-o" aria-hidden="true"></i></span>
-          <%= f.file_field :resume %>
+<div class="application-job">
+  <div class="container app-form">
+    <div class="row">
+      <%= form_for [@job, @apply] do |f| %>
+      <div class="card application-card">
+        <div class="apply input-field col s6">
+          <%= f.label :'First Name', :class => 'active' %><br />
+          <%= f.text_field :first_name, autofocus: true %>
         </div>
-        <div class="file-path-wrapper">
-          <input type="text" class="file-path validate">
+
+        <div class="apply input-field col s6">
+          <%= f.label :'Last Name', :class => 'active' %><br />
+          <%= f.text_field :last_name, autofocus: true %>
         </div>
       </div>
 
-      <div class="file-field apply input-field col s6 file-upload">
-        <div class="btn">
-          <span>Cover Letter <i class="fa fa-file-word-o" aria-hidden="true"></i></span>
-          <%= f.file_field :cover_letter %>
+      <div class="card application-card">
+        <div class="apply input-field col s3">
+          <%= f.label :'Street Address', :class => 'active' %><br />
+          <%= f.text_field :street_address, autofocus: true %>
         </div>
-        <div class="file-path-wrapper">
-          <input type="text" class="file-path validate">
+
+        <div class="apply input-field col s3">
+          <%= f.label :'City', :class => 'active' %><br />
+          <%= f.text_field :city, autofocus: true %>
+        </div>
+
+        <div class="apply input-field col s3">
+          <%= f.label :'State', :class => 'active' %><br />
+          <%= f.text_field :state, autofocus: true %>
+        </div>
+
+        <div class="apply input-field col s3">
+          <%= f.label :'Zip Code', :class => 'active' %><br />
+          <%= f.text_field :zip_code, autofocus: true %>
         </div>
       </div>
-    </div>
-    <%= f.hidden_field :user_id, :value => current_user.id %>
-    <%= f.hidden_field :job_id, :value => @job.id %>
 
-    <div class="actions col s12">
-      <%= f.submit "Apply", :class => 'btn'%>
+      <div class="card application-card">
+        <div class="apply input-field col s12">
+          <%= f.text_field :skills, :class => 'autocomplete' %>
+          <%= f.label :skills, :class => 'active' %><br />
+        </div>
+      </div>
+
+      <div class="card application-card">
+        <div class="apply input-field col s6">
+          <%= f.label :'Phone Number', :class => 'active' %><br />
+          <%= f.text_field :phone_number, autofocus: true %>
+        </div>
+
+        <div class="apply input-field col s6">
+          <%= f.label :email, :class => 'active' %><br />
+          <%= f.email_field :email, autofocus: true %>
+        </div>
+      </div>
+
+      <div class="card application-card">
+        <div class="file-field apply input-field col s6 file-upload">
+          <div class="btn">
+            <span>Resume <i class="fa fa-file-pdf-o" aria-hidden="true"></i></span>
+            <%= f.file_field :resume %>
+          </div>
+          <div class="file-path-wrapper">
+            <input type="text" class="file-path validate">
+          </div>
+        </div>
+
+        <div class="file-field apply input-field col s6 file-upload">
+          <div class="btn">
+            <span>Cover Letter <i class="fa fa-file-word-o" aria-hidden="true"></i></span>
+            <%= f.file_field :cover_letter %>
+          </div>
+          <div class="file-path-wrapper">
+            <input type="text" class="file-path validate">
+          </div>
+        </div>
+      </div>
+      <%= f.hidden_field :user_id, :value => current_user.id %>
+      <%= f.hidden_field :job_id, :value => @job.id %>
+
+      <div class="actions col s12">
+        <%= f.submit "Apply", :class => 'btn'%>
+      </div>
+      <%end %>
     </div>
-    <%end %>
   </div>
 </div>
