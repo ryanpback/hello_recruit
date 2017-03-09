@@ -262,18 +262,48 @@ ul.collapsible {
   transform: translate(-50%, -50%);
   width: 700px;
   background-color: $blue;
+  padding-top: 30px;
+  padding-bottom: 6px;
+}
+.form-input {
+  label {
+    font-size: 18px;
+    color: #fff;
+  }
+  input {
+    border-bottom: 1px solid $beige;
+    color: #fff;
+    font-size: 20px;
+  }
+  input[type=text]:focus:not([readonly]) {
+    border-bottom: 1px solid #fff;
+    font-size: 20px;
+  }
 }
 
-[type="radio"]:not(:checked) + label, [type="radio"]:checked + label {
-  padding-left: 27px;
-  padding-right: 30px;
+.radio-buttons {
+  label {
+    color: #fff;
+  }
+  [type="radio"]:not(:checked) + label, [type="radio"]:checked + label {
+    padding-left: 27px;
+    padding-right: 30px;
+  }
+  [type="radio"]:not(:checked) + label:before, [type="radio"]:not(:checked) + label:after {
+    border: 2px solid #fff;
+  }
+  [type="radio"]:checked + label:after, [type="radio"].with-gap:checked + label:after {
+    background-color: $beige;
+    border: 2px solid $beige;
+  }
 }
-
 .new-job-header {
   margin-top: 0;
   padding-top: 35px;
   color: #fff;
 }
+
+
 
 
 
@@ -479,6 +509,10 @@ td {
     padding: 10px;
     border: 1px solid $grey;
     font-size: 30px;
+    i {
+      font-size: 20px;
+      color: #fff;
+    }
   }
   p.user-email {
     font-size: 20px;
@@ -506,8 +540,82 @@ td {
   a.doc-links:hover {
     color: $beige;
   }
-
 }
 
+.profile-row {
+  height: 600px;
+}
 
+.applied-row {
+  width: 80%;
+}
+
+.applies {
+  color: $blue;
+}
 /********* END PROFILE ************/
+
+
+/********* JOB DETAIL ************/
+.job-detail {
+  height: 100vh;
+  position: relative;
+  background-color: $beige;
+}
+
+.job-detail-row {
+  height: 900px;
+}
+
+.job-card {
+  width: 100%;
+  max-width: 800px;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: $blue;
+  padding-top: 8px;
+  padding-bottom: 42px;
+  color: $beige;
+  .detail-title {
+    margin-bottom: 0;
+  }
+  .detail-location {
+    margin-top: -5px;
+    font-size: 35px;
+    margin-bottom: 0;
+  }
+  .detail-job_type {
+    margin-bottom: 0;
+  }
+  .detail-duration {
+    margin-top: -6px;
+    margin-bottom: 0;
+  }
+  .detail-compensation {
+    font-size: 1.64rem;
+    margin-top: -5px;
+  }
+  .detail-skills {
+    text-align: left;
+    margin-left: 20px;
+  }
+  .detail-description-head {
+    margin-left: 20px;
+    margin-bottom: 0;
+    text-align: left;
+  }
+  .detail-description {
+    text-align: left;
+    margin-left: 20px;
+    margin-top: -5px;
+    margin-bottom: 50px;
+  }
+}
+
+.applicants {
+  color: $blue;
+  text-align: left;
+}
+/********* END JOB DETAIL ************/

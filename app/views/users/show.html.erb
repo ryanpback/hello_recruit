@@ -1,8 +1,14 @@
 <div class="profile">
+  <div class="row profile-row">
   <div class="card profile-card">
-    <div class="row">
       <div class="col s10 offset-s1">
-        <h4 class="card-title center"><%= @user.first_name %> <%= @user.last_name %></h4>
+        <% if current_user.id === @user.id %>
+          <h4 class="card-title center"><%= @user.first_name %> <%= @user.last_name %><%= link_to edit_user_registration_path do %>
+            <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+          <% end %></h4>
+        <% else %>
+          <h4 class="card-title center"><%= @user.first_name %> <%= @user.last_name %></h4>
+        <% end %>
         <p class="user-email left-align">Email: <%= @user.email %></p>
         <p class="user-phone_number left-align">Phone number: <%= @user.phone_number %></p>
         <p class="user-street_address left-align">Street Address: <%= @user.street_address %></p>
@@ -14,34 +20,35 @@
       </div>
     </div>
   </div>
-
-  <!-- <% if !@user.jobs.any? %>
-  <h2 class="center no-applies">You have not applied for any jobs.</h2>
-  <% else %>
-  <div class="row">
-    <div class="col s8 offset-s2 user-table">
-      <h2 class="center applies">Jobs Applied For</h2>
-      <table class="table striped bordered">
-        <thead>
-          <tr>
-            <th>Job Title</th>
-            <th>Location</th>
-            <th>Job Type</th>
-            <th>Compensation</th>
-          </tr>
-        </thead>
-        <tbody>
-          <% @user.jobs.each do |job|%>
-          <tr data-link='<%= job_path(job) %>'>
-            <td><%= job.title %></td>
-            <td><%= job.location %></td>
-            <td><%= job.job_type %></td>
-            <td>$<%= job.compensation %></td>
-          </tr>
-          <% end %>
-        </tbody>
-      </table>
+  <div class="row applied-row">
+    <div class="col s10 offset-s1">
+      <% if !@user.jobs.any? %>
+        <h2 class="center no-applies">You have not applied for any jobs.</h2>
+      <% else %>
+        <div class="col s8 offset-s2 user-table">
+          <h2 class="applies">Jobs Applied For</h2>
+          <table class="table striped bordered">
+            <thead>
+              <tr>
+                <th>Job Title</th>
+                <th>Location</th>
+                <th>Job Type</th>
+                <th>Compensation</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% @user.jobs.each do |job|%>
+              <tr data-link='<%= job_path(job) %>' class = 'table-rows'>
+                <td><%= job.title %></td>
+                <td><%= job.location %></td>
+                <td><%= job.job_type %></td>
+                <td>$<%= job.compensation %></td>
+              </tr>
+              <% end %>
+            </tbody>
+          </table>
+        </div>
+      <% end %>
     </div>
   </div>
-  <% end %> -->
 </div>
