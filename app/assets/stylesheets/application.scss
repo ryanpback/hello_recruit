@@ -237,21 +237,6 @@ ul.collapsible {
   border-color: none;
 }
 
-
-table.bordered {
-  border: 1px solid #000;
-}
-
-th {
-  border: 1px solid #000;
-  text-align: center;
-}
-
-td {
-  border: 1px solid #000;
-  text-align: center;
-}
-
 .file-upload {
   margin-bottom: 30px;
 }
@@ -309,6 +294,7 @@ td {
 /********* FOOTER ************/
 footer {
   margin-top: -20px;
+  width: 100%;
 }
 
 .page-footer {
@@ -365,7 +351,9 @@ footer {
     width: 500px;
   }
 }
+/********* END LOGIN ************/
 
+/********* SIGNUP ************/
 .sign-up {
   height: 100vh;
   position: relative;
@@ -383,6 +371,11 @@ footer {
 
 .signup-header {
   color: #fff;
+}
+
+.go-to {
+  color: #fff;
+  margin-top: -12px;
 }
 
 .signup-input {
@@ -408,7 +401,113 @@ footer {
     font-size: 20px;
   }
 }
+/********* END SIGNUP ************/
+
+/********* CANDIDATES ************/
+.candidates {
+  height: 85vh;
+  position: relative;
+  background-color: $beige;
+  z-index: 0;
+}
+
+.no-users {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  .card {
+    background-color: $blue;
+    color: $beige;
+  }
+}
+
+.candidates-list {
+  margin-top: 0;
+  padding-top: 80px;
+}
+
+.candidate-table {
+  .table {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+  }
+}
+
+table.bordered {
+  border: 1px solid #000;
+}
+
+tr.table-rows:hover {
+  background-color: $light-blue !important;
+  color: #fff;
+  cursor: pointer;
+}
+
+th {
+  border: 1px solid #000;
+  text-align: center;
+}
+
+td {
+  border: 1px solid #000;
+  text-align: center;
+}
+/********* END CANDIDATES ************/
 
 
+/********* PROFILE ************/
+.profile {
+  height: 100vh;
+  background-color: $beige;
+  position: relative;
+}
 
-/********* END LOGIN ************/
+.profile-card {
+  color: $beige;
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  max-width: 800px;
+  background-color: $blue;
+  h4.card-title {
+    padding: 10px;
+    border: 1px solid $grey;
+    font-size: 30px;
+  }
+  p.user-email {
+    font-size: 20px;
+  }
+  p.user-phone_number {
+    font-size: 20px;
+  }
+  p.user-street_address {
+    font-size: 20px;
+  }
+  p.user-city-state {
+    font-size: 20px;
+  }
+  p.user-zip_code {
+    font-size: 20px;
+  }
+  p.user-skills {
+    font-size: 20px;
+  }
+  a.doc-links {
+    padding: 10px;
+    color: $grey;
+    font-size: 15px;
+  }
+  a.doc-links:hover {
+    color: $beige;
+  }
+
+}
+
+
+/********* END PROFILE ************/
